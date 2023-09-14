@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <base target="_top">
-      <style>
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-      </style>
-   </head>
-   <body>
-      <iframe src="https://script.google.com/a/macros/rakwittaya.ac.th/s/AKfycbyEluvlDduffs2VGXIqRHBSmSi0-z6BgMqy3LapgS7IjAOOt6zOPrwTWn3sYqOf0XasyQ/exec"></iframe>
-   </body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <style>
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div> 
+    <iframe id="myframe" class="responsive-iframe" src="" allowFullScreen></iframe>
+  </div>
+  <script>
+    const apps = new URL(window.location);
+    const formUrl = apps.searchParams.get('apps');
+    const url = decodeURIComponent(formUrl)
+          document.getElementById('myframe').src = url
+  </script>
+</body>
 </html>
